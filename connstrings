@@ -1,0 +1,704 @@
+Checking dependencies for the creation of the branches ...
+
+Name                               Location        Status
+---------------------------------  --------------  ---------
+NetworkWatcherRG                   westus          Succeeded
+DefaultResourceGroup-WUS2          westus2         Succeeded
+rg-data-management-zone-terraform  southcentralus  Succeeded
+rg-datamz-dev-network              southcentralus  Succeeded
+rg-datamz-dev-monitoring           southcentralus  Succeeded
+rg-datamz-dev-consumption          southcentralus  Succeeded
+rg-datamz-dev-management           southcentralus  Succeeded
+rg-datamz-dev-automation           southcentralus  Succeeded
+rg-datamz-dev-private-dns          southcentralus  Succeeded
+rg-datamz-dev-governance           southcentralus  Succeeded
+rg-datamz-dev-containers           southcentralus  Succeeded
+managed-rg-pmbjslb                 southcentralus  Succeeded
+rg-datamz-dev-adds                 southcentralus  Succeeded
+Checking dependencies for the creation of the branches ...
+
+Name                               Location        Status
+---------------------------------  --------------  ---------
+NetworkWatcherRG                   westus          Succeeded
+DefaultResourceGroup-WUS2          westus2         Succeeded
+rg-data-management-zone-terraform  southcentralus  Succeeded
+rg-datamz-dev-network              southcentralus  Succeeded
+rg-datamz-dev-monitoring           southcentralus  Succeeded
+rg-datamz-dev-consumption          southcentralus  Succeeded
+rg-datamz-dev-management           southcentralus  Succeeded
+rg-datamz-dev-automation           southcentralus  Succeeded
+rg-datamz-dev-private-dns          southcentralus  Succeeded
+rg-datamz-dev-governance           southcentralus  Succeeded
+rg-datamz-dev-containers           southcentralus  Succeeded
+managed-rg-pmbjslb                 southcentralus  Succeeded
+rg-datamz-dev-adds                 southcentralus  Succeeded
+./ssh_keys/sreeram_id_rsa does not exist...Generating SSH Key
+Creating ssh key directory...
+Generating ssh key...
+Generating public/private rsa key pair.
+Your identification has been saved in ./ssh_keys/sreeram_id_rsa
+Your public key has been saved in ./ssh_keys/sreeram_id_rsa.pub
+The key fingerprint is:
+SHA256:doq7OJW3UqNHIGVVwEGVf6koFwgpeWsPemuiHAJhGCo root@codespaces_627dd4
+The key's randomart image is:
++---[RSA 3072]----+
+|.    . ===o.     |
+|o.  o * . .      |
+|E.   = o . .   . |
+|o.  . = . . . o  |
+|.    + =S .o o   |
+|.   . +oBoo .    |
+|. .  o.*.=       |
+| o .o.=.o        |
+|  o..+o+         |
++----[SHA256]-----+
+Parameters
+------------------------------------------------
+ARM_DEPLOYMENT_NAME: reddogbicep
+SUBSCRIPTION: 893395a4-65a3-4525-99ea-2378c6e0dbed
+TENANT_ID: 72f988bf-86f1-41af-91ab-2d7cd011db47
+RG_NAME: sreeram-reddog-hub-eastus
+ADMIN_USER_NAME: reddogadmin
+SSH_KEY_PATH: ./ssh_keys
+SQL_ADMIN_USER_NAME: reddogadmin
+SQL_ADMIN_PASSWD: nJ0fqrQx7T^NZFl4sFf*U
+------------------------------------------------
+{
+  "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus",
+  "location": "eastus",
+  "managedBy": null,
+  "name": "sreeram-reddog-hub-eastus",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+Deploying hub resources ...
+{
+  "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Resources/deployments/reddogbicep",
+  "location": null,
+  "name": "reddogbicep",
+  "properties": {
+    "correlationId": "75f5b6e8-b32d-4ab5-ad5a-f7dc254cd1c8",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Network/virtualNetworks/sreeram-hub-vnet",
+            "resourceGroup": "sreeram-reddog-hub-eastus",
+            "resourceName": "sreeram-hub-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks"
+          }
+        ],
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Resources/deployments/aks-deployment",
+        "resourceGroup": "sreeram-reddog-hub-eastus",
+        "resourceName": "aks-deployment",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT3M45.1030378S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.ContainerService/managedClusters/sreeram-hub-aks",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.DocumentDB/databaseAccounts/sreeram-hub-cosmos-eastus",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.DocumentDB/databaseAccounts/sreeram-hub-cosmos-eastus/sqlDatabases/reddog",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.DocumentDB/databaseAccounts/sreeram-hub-cosmos-eastus/sqlDatabases/reddog/containers/loyalty",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.KeyVault/vaults/sreeram-hub-kv-vfj5",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Network/virtualNetworks/sreeram-hub-vnet",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.OperationalInsights/workspaces/reddog-loganalytics",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.ServiceBus/namespaces/sreeram-hub-servicebus-eastus",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.ServiceBus/namespaces/sreeram-hub-servicebus-eastus/topics/ordercompleted",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.ServiceBus/namespaces/sreeram-hub-servicebus-eastus/topics/orders",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Sql/servers/sreeram-hub-sqlserver",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Sql/servers/sreeram-hub-sqlserver/databases/reddoghub",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Storage/storageAccounts/sreeramreddoghubsa",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Web/serverfarms/farm-reddoghubvfj5kxdxml3s2",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      },
+      {
+        "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Web/sites/ui-reddoghubvfj5kxdxml3s2",
+        "resourceGroup": "sreeram-reddog-hub-eastus"
+      }
+    ],
+    "outputs": {
+      "aksName": {
+        "type": "String",
+        "value": "sreeram-hub-aks"
+      },
+      "cosmosDbName": {
+        "type": "String",
+        "value": "sreeram-hub-cosmos-eastus"
+      },
+      "keyvaultName": {
+        "type": "String",
+        "value": "sreeram-hub-kv-vfj5"
+      },
+      "serviceBusName": {
+        "type": "String",
+        "value": "sreeram-hub-servicebus-eastus"
+      },
+      "sqlServerName": {
+        "type": "String",
+        "value": "sreeram-hub-sqlserver"
+      },
+      "storageAccountName": {
+        "type": "String",
+        "value": "sreeramreddoghubsa"
+      }
+    },
+    "parameters": {
+      "adminPublicKey": {
+        "type": "String",
+        "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+y3D9Z8UMp1+ZyqmcsAd7uy65+3sXciU+hwCnXps9nIVeeYgNkFBMcGpAd7DisGBQ4B3wzF9kQ25BorSA+kQmhv/frOrSIwj2WlMmTebMF6ey2fFNgvLzb1aaldGk1MBw15mhS6EEoc3ZJO9jSjUwz5HIRRWyv40sKSJ+/tC86JUDB7FBWAgWtx0UeydqASnZ4HfP2zEAa79ldMM12JgOr4naIzdKpNo0a5TqCS6pddkzrqfPFHCfBs6jGrssM665aGiRonMBFfDJ/UPw2DrTrtRuVMqc7i0PMRi7mvZQBbhg9PBlRPMcnWLsMOFxflITVIi0f4gPTj8TEAOmVl+xVnMwZ5qdkC+xs3uX9lstHIfS+D5RcI14LUeeWFsYIMaZ4ffVwzlQpQ0JVX44tneUZEay9s7Gdcjughy+v3oWwuljuM5h8uib/19Fiz97CABks4Jy6NV/dKuyqdUfy9aykr7lI+yQU+PThbWPH5B/Bn90GkDLTguDqh+g2PHJbDs= root@codespaces_627dd4"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "reddogadmin"
+      },
+      "aksSubnetInfo": {
+        "type": "Object",
+        "value": {
+          "name": "AksSubnet",
+          "properties": {
+            "addressPrefix": "10.0.4.0/22",
+            "privateEndpointNetworkPolicies": "Disabled"
+          }
+        }
+      },
+      "currentUserId": {
+        "type": "String",
+        "value": "40efb926-53ee-436c-943c-1c291c9784b7"
+      },
+      "jumpboxSubnetInfo": {
+        "type": "Object",
+        "value": {
+          "name": "JumpboxSubnet",
+          "properties": {
+            "addressPrefix": "10.0.255.240/28"
+          }
+        }
+      },
+      "prefix": {
+        "type": "String",
+        "value": "sreeram"
+      },
+      "sqlAdminPassword": {
+        "type": "String",
+        "value": "nJ0fqrQx7T^NZFl4sFf*U"
+      },
+      "sqlAdminUsername": {
+        "type": "String",
+        "value": "reddogadmin"
+      },
+      "vnetPrefix": {
+        "type": "String",
+        "value": "10.0.0.0/16"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Network",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              "eastus"
+            ],
+            "properties": null,
+            "resourceType": "virtualNetworks"
+          }
+        ]
+      },
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments"
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "5658087419379133194",
+    "templateLink": null,
+    "timestamp": "2022-01-20T01:15:37.245120+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "sreeram-reddog-hub-eastus",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+{
+  "aksName": {
+    "type": "String",
+    "value": "sreeram-hub-aks"
+  },
+  "cosmosDbName": {
+    "type": "String",
+    "value": "sreeram-hub-cosmos-eastus"
+  },
+  "keyvaultName": {
+    "type": "String",
+    "value": "sreeram-hub-kv-vfj5"
+  },
+  "serviceBusName": {
+    "type": "String",
+    "value": "sreeram-hub-servicebus-eastus"
+  },
+  "sqlServerName": {
+    "type": "String",
+    "value": "sreeram-hub-sqlserver"
+  },
+  "storageAccountName": {
+    "type": "String",
+    "value": "sreeramreddoghubsa"
+  }
+}
+****************************************************
+Hub deployed successfully.
+Next: Configuring the cluster.
+****************************************************
+Merged "sreeram-hub-aks" as current context in /root/.kube/config
+Allow access to Azure Services to Azure SQL
+{
+  "endIpAddress": "0.0.0.0",
+  "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.Sql/servers/sreeram-hub-sqlserver/firewallRules/AllowAzureServices",
+  "name": "AllowAzureServices",
+  "resourceGroup": "sreeram-reddog-hub-eastus",
+  "startIpAddress": "0.0.0.0",
+  "type": "Microsoft.Sql/servers/firewallRules"
+}
+Key Vault: sreeram-hub-kv-vfj5
+Create SP for KV use...
+Option '--skip-assignment' has been deprecated and will be removed in a future release.
+The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
+{
+  "appId": "c994b7b2-250e-4563-bd69-dcfd89f71212",
+  "displayName": "http://sp-sreeram-reddog-hub-eastus.microsoft.com",
+  "password": null,
+  "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+}
+Getting SP_APPID ...
+AKV SP_APPID: c994b7b2-250e-4563-bd69-dcfd89f71212
+Getting SP_OBJECTID ...
+AKV SP_OBJECTID: ba8c1bc3-b1d3-43c2-992c-9f8ac2f3c410
+{
+  "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.KeyVault/vaults/sreeram-hub-kv-vfj5",
+  "location": "eastus",
+  "name": "sreeram-hub-kv-vfj5",
+  "properties": {
+    "accessPolicies": [
+      {
+        "applicationId": null,
+        "objectId": "40efb926-53ee-436c-943c-1c291c9784b7",
+        "permissions": {
+          "certificates": [
+            "get",
+            "create"
+          ],
+          "keys": null,
+          "secrets": null,
+          "storage": null
+        },
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+      },
+      {
+        "applicationId": null,
+        "objectId": "ba8c1bc3-b1d3-43c2-992c-9f8ac2f3c410",
+        "permissions": {
+          "certificates": [
+            "get"
+          ],
+          "keys": null,
+          "secrets": [
+            "get"
+          ],
+          "storage": null
+        },
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+      }
+    ],
+    "createMode": null,
+    "enablePurgeProtection": null,
+    "enableRbacAuthorization": null,
+    "enableSoftDelete": false,
+    "enabledForDeployment": false,
+    "enabledForDiskEncryption": null,
+    "enabledForTemplateDeployment": null,
+    "hsmPoolResourceId": null,
+    "networkAcls": null,
+    "privateEndpointConnections": null,
+    "provisioningState": "Succeeded",
+    "publicNetworkAccess": "Enabled",
+    "sku": {
+      "family": "A",
+      "name": "standard"
+    },
+    "softDeleteRetentionInDays": null,
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "vaultUri": "https://sreeram-hub-kv-vfj5.vault.azure.net/"
+  },
+  "resourceGroup": "sreeram-reddog-hub-eastus",
+  "systemData": {
+    "createdAt": null,
+    "createdBy": null,
+    "createdByType": null,
+    "lastModifiedAt": "2022-01-20T01:16:14.663000+00:00",
+    "lastModifiedBy": "srram@microsoft.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": {},
+  "type": "Microsoft.KeyVault/vaults"
+}
+{
+  "id": "/subscriptions/893395a4-65a3-4525-99ea-2378c6e0dbed/resourceGroups/sreeram-reddog-hub-eastus/providers/Microsoft.KeyVault/vaults/sreeram-hub-kv-vfj5",
+  "location": "eastus",
+  "name": "sreeram-hub-kv-vfj5",
+  "properties": {
+    "accessPolicies": [
+      {
+        "applicationId": null,
+        "objectId": "40efb926-53ee-436c-943c-1c291c9784b7",
+        "permissions": {
+          "certificates": [
+            "list",
+            "get",
+            "create"
+          ],
+          "keys": null,
+          "secrets": [
+            "list",
+            "set",
+            "get"
+          ],
+          "storage": null
+        },
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+      },
+      {
+        "applicationId": null,
+        "objectId": "ba8c1bc3-b1d3-43c2-992c-9f8ac2f3c410",
+        "permissions": {
+          "certificates": [
+            "get"
+          ],
+          "keys": null,
+          "secrets": [
+            "get"
+          ],
+          "storage": null
+        },
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+      }
+    ],
+    "createMode": null,
+    "enablePurgeProtection": null,
+    "enableRbacAuthorization": null,
+    "enableSoftDelete": false,
+    "enabledForDeployment": false,
+    "enabledForDiskEncryption": null,
+    "enabledForTemplateDeployment": null,
+    "hsmPoolResourceId": null,
+    "networkAcls": null,
+    "privateEndpointConnections": null,
+    "provisioningState": "Succeeded",
+    "publicNetworkAccess": "Enabled",
+    "sku": {
+      "family": "A",
+      "name": "standard"
+    },
+    "softDeleteRetentionInDays": null,
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "vaultUri": "https://sreeram-hub-kv-vfj5.vault.azure.net/"
+  },
+  "resourceGroup": "sreeram-reddog-hub-eastus",
+  "systemData": {
+    "createdAt": null,
+    "createdBy": null,
+    "createdByType": null,
+    "lastModifiedAt": "2022-01-20T01:16:16.471000+00:00",
+    "lastModifiedBy": "srram@microsoft.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": {},
+  "type": "Microsoft.KeyVault/vaults"
+}
+namespace/reddog-retail created
+secret/reddog.secretstore created
+namespace/zipkin created
+deployment.apps/zipkin created
+service/zipkin exposed
+adding Key Vault Secrets
+{
+  "attributes": {
+    "created": "2022-01-20T01:16:22+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2022-01-20T01:16:22+00:00"
+  },
+  "contentType": null,
+  "id": "https://sreeram-hub-kv-vfj5.vault.azure.net/secrets/sb-root-connectionstring/ffb43f83f67a41a4854c0cd8be07b5c6",
+  "kid": null,
+  "managed": null,
+  "name": "sb-root-connectionstring",
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "Endpoint=sb://sreeram-hub-servicebus-eastus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=TfjbeORS2DWbG3tjTBfer5GIQOlLBY6WZQHKWNGkzco="
+}
+{
+  "attributes": {
+    "created": "2022-01-20T01:16:23+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2022-01-20T01:16:23+00:00"
+  },
+  "contentType": null,
+  "id": "https://sreeram-hub-kv-vfj5.vault.azure.net/secrets/sblob-storage-key/3f256bbe866d4864bda7f7260352be9e",
+  "kid": null,
+  "managed": null,
+  "name": "sblob-storage-key",
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "sreeramreddoghubsa"
+}
+{
+  "attributes": {
+    "created": "2022-01-20T01:16:25+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2022-01-20T01:16:25+00:00"
+  },
+  "contentType": null,
+  "id": "https://sreeram-hub-kv-vfj5.vault.azure.net/secrets/cosmos-primary-rw-key/3e1ba4d40210417bb6439a49a464a7fe",
+  "kid": null,
+  "managed": null,
+  "name": "cosmos-primary-rw-key",
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "LXsahwY6L5vCAd4QV18Gh7ESrzeEX9orLIcCMWADljsLg65R0TPZEqGPCTEBmoAzf5TyhVtVfmENiVcKIaStSA=="
+}
+{
+  "attributes": {
+    "created": "2022-01-20T01:16:27+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2022-01-20T01:16:27+00:00"
+  },
+  "contentType": null,
+  "id": "https://sreeram-hub-kv-vfj5.vault.azure.net/secrets/cosmos-uri/521ab335371b4e1b966978e4968ad0f5",
+  "kid": null,
+  "managed": null,
+  "name": "cosmos-uri",
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "https://sreeram-hub-cosmos-eastus.documents.azure.com:443/"
+}
+SQL:sreeram-hub-sqlserver
+USER:reddogadmin
+PWD:nJ0fqrQx7T^NZFl4sFf*U
+CONNECT:Server=tcp:sreeram-hub-sqlserver.database.windows.net,1433;Database=reddoghub;User ID=reddogadmin;Password=nJ0fqrQx7T^NZFl4sFf*U;Encrypt=true;Connection Timeout=30;
+{
+  "attributes": {
+    "created": "2022-01-20T01:16:28+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2022-01-20T01:16:28+00:00"
+  },
+  "contentType": null,
+  "id": "https://sreeram-hub-kv-vfj5.vault.azure.net/secrets/reddog-sql/dbb96f980bef42d3b181b6e2b2088231",
+  "kid": null,
+  "managed": null,
+  "name": "reddog-sql",
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "Server=tcp:sreeram-hub-sqlserver.database.windows.net,1433;Database=reddoghub;User ID=reddogadmin;Password=nJ0fqrQx7T^NZFl4sFf*U;Encrypt=true;Connection Timeout=30;"
+}
+The command requires the extension connectedk8s. It will be installed first.
+This operation might take a while...
+
+Microsoft.Kubernetes provider is not registered. Please register it using 'az provider register -n 'Microsoft.Kubernetes' before running the connect command.
+ERROR: Please check the error messages above.
+ERROR: Please check the error messages above.
+Checking dependencies for the creation of the branches ...
+
+Name                                                             Location        Status
+---------------------------------------------------------------  --------------  ---------
+NetworkWatcherRG                                                 southcentralus  Succeeded
+rg-datalz-dev-shared-integration                                 southcentralus  Succeeded
+rg-datalz-dev-externalstorage                                    southcentralus  Succeeded
+rg-datalz-dev-metadata                                           southcentralus  Succeeded
+rg-datalz-dev-mgmt                                               southcentralus  Succeeded
+rg-datalz-dev-data-product001                                    southcentralus  Succeeded
+rg-datalz-dev-network                                            southcentralus  Succeeded
+rg-datalz-dev-storage                                            southcentralus  Succeeded
+rg-datalz-dev-data-int001                                        southcentralus  Succeeded
+rg-datalz-dev-shared-product                                     southcentralus  Succeeded
+rg-datalz-dev-data-product002                                    southcentralus  Succeeded
+rg-datalz-dev-data-int002                                        southcentralus  Succeeded
+rg-datalz-dev-logging                                            southcentralus  Succeeded
+synapseworkspace-managedrg-11b52da4-400c-4779-942f-4123b199a55b  southcentralus  Succeeded
+databricks-rg-rg-datalz-dev-shared-product                       southcentralus  Succeeded
+databricks-rg-rg-datalz-dev-shared-integration                   southcentralus  Succeeded
+rg-datalz-dev-runtimes                                           southcentralus  Succeeded
+rg-githubactionstest                                             southcentralus  Succeeded
+datalz-policy-test                                               southcentralus  Succeeded
+rg-datalakeorg                                                   southcentralus  Succeeded
+managed-rg-jdhszck                                               southcentralus  Succeeded
+fxp-rg-ml                                                        southcentralus  Succeeded
+rg-sreeram                                                       eastus2         Succeeded
+sreeram-reddog-hub-eastus                                        eastus          Succeeded
+MC_sreeram-reddog-hub-eastus_sreeram-hub-aks_eastus              eastus          Succeeded
+azuredatadays                                                    westus          Succeeded
+./ssh_keys/sreeram_id_rsa exists. Skipping SSH Key Gen
+Parameters
+------------------------------------------------
+ARM_DEPLOYMENT_NAME: reddogbicep
+RG_PREFIX: sreeram
+SUBSCRIPTION: 893395a4-65a3-4525-99ea-2378c6e0dbed
+TENANT_ID: 72f988bf-86f1-41af-91ab-2d7cd011db47
+K3S_TOKEN: CAa6BYPyp+6NwLY5f3or
+ADMIN_USER_NAME: reddogadmin
+SSH_KEY_PATH: ./ssh_keys
+SSH_KEY_NAME: ./ssh_keys/sreeram_id_rsa
+SSH_PUB_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+y3D9Z8UMp1+ZyqmcsAd7uy65+3sXciU+hwCnXps9nIVeeYgNkFBMcGpAd7DisGBQ4B3wzF9kQ25BorSA+kQmhv/frOrSIwj2WlMmTebMF6ey2fFNgvLzb1aaldGk1MBw15mhS6EEoc3ZJO9jSjUwz5HIRRWyv40sKSJ+/tC86JUDB7FBWAgWtx0UeydqASnZ4HfP2zEAa79ldMM12JgOr4naIzdKpNo0a5TqCS6pddkzrqfPFHCfBs6jGrssM665aGiRonMBFfDJ/UPw2DrTrtRuVMqc7i0PMRi7mvZQBbhg9PBlRPMcnWLsMOFxflITVIi0f4gPTj8TEAOmVl+xVnMwZ5qdkC+xs3uX9lstHIfS+D5RcI14LUeeWFsYIMaZ4ffVwzlQpQ0JVX44tneUZEay9s7Gdcjughy+v3oWwuljuM5h8uib/19Fiz97CABks4Jy6NV/dKuyqdUfy9aykr7lI+yQU+PThbWPH5B/Bn90GkDLTguDqh+g2PHJbDs= root@codespaces_627dd4
+------------------------------------------------
+
+Waiting for the denver branch creation to complete ...
+Check the log files in ./logs/sreeram-reddog-denver-eastus.log for its creation status
+[branch: denver] - Deploying branch office resources ...
+{
+  "clusterFQDN": {
+    "type": "String",
+    "value": "sreeramdenver-k3s-worker-pub-ip.eastus.cloudapp.azure.com"
+  },
+  "clusterIP": {
+    "type": "String",
+    "value": "52.255.182.42"
+  },
+  "controlName": {
+    "type": "String",
+    "value": "sreeramdenver-k3s-control"
+  },
+  "jumpVMName": {
+    "type": "String",
+    "value": "sreeramdenver-k3s-jump-vm"
+  },
+  "keyvaultName": {
+    "type": "String",
+    "value": "sreeramdenver-kv"
+  },
+  "publicIP": {
+    "type": "String",
+    "value": "20.124.99.41"
+  },
+  "storageAccountName": {
+    "type": "String",
+    "value": "sreeramdenverreceipts"
+  },
+  "userAssignedMIAppID": {
+    "type": "String",
+    "value": "a081729d-dfcb-4b58-8bb0-c2f216181344"
+  }
+}
+[branch: denver] - Waiting for jump server to start
+[branch: denver] - Jump Server Running!
+[branch: denver] - Copying private key to jump server ...
+[branch: denver] - Waiting for cloud-init to finish configuring the jumpbox ...
+[branch: denver] - Jump Server connection info: ssh reddogadmin@20.124.99.41 -i ./ssh_keys/sreeram_id_rsa -p 2022
+[branch: denver] - Executing setup script on jump server ...
+[branch: denver] - Creating Namespaces ...
+[branch: denver] - Creating branch config secrets
+[branch: denver] - Creating RabbitMQ, Redis and MsSQL Password Secrets ...
+[branch: denver] - Arc joining the branch cluster ...
+[branch: denver] - Waiting 90 seconds for Dependencies to deploy before installing base reddog-retail configs
+[branch: denver] - Setup SQL User: reddogadmin and DB
+[branch: denver] - Done SQL setup
+[branch: denver] - Deploing Dapr and the reddog app configs ...
+****************************************************
+[branch: denver] - Deployment Complete! 
+Jump server connection info: ssh reddogadmin@20.124.99.41 -i ./ssh_keys/sreeram_id_rsa -p 2022
+Cluster connection info: http://52.255.182.42:8081 or http://sreeramdenver-k3s-worker-pub-ip.eastus.cloudapp.azure.com:8081
+****************************************************
